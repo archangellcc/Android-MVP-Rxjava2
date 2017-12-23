@@ -62,6 +62,8 @@ public abstract class BasePresenter<M extends IModel, V extends IView> implement
     @Override
     public V getIView() {
         Log.e("mViewRef.get","----------网络请求异步返回页面是否关闭了？----------"+isAttachView());
+        if(mViewRef==null)
+            return null;
         return mViewRef.get();
     }
 

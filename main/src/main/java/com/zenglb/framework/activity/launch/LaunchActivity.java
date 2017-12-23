@@ -12,15 +12,13 @@ import android.telephony.gsm.GsmCellLocation;
 import android.text.TextUtils;
 import android.widget.Toast;
 
+import com.tencent.bugly.crashreport.CrashReport;
 import com.zenglb.baselib.base.BaseActivity;
 import com.zenglb.baselib.sharedpreferences.SharedPreferencesDao;
 import com.zenglb.framework.R;
-import com.zenglb.framework.activity.alarmManger.AlarmMangerActivity;
-import com.zenglb.framework.activity.architecture.ArchitectureActivity;
-import com.zenglb.framework.activity.quick_input_things.QuickInputThingsActivity;
-import com.zenglb.framework.activity.rxjava2.ZipActivity;
+import com.zenglb.framework.activity.demo.ConstraintLayoutActivity;
 import com.zenglb.framework.config.SPKey;
-import com.zenglb.framework.demo.Rxjava_ZIP_Activity;
+import com.zenglb.framework.mvp_more.MVPActivity;
 import com.zenglb.framework.mvp_oauth.Oauth_MVP_Activity;
 import com.zenglb.framework.navigation.MainActivityBottomNavi;
 
@@ -32,7 +30,6 @@ public class LaunchActivity extends BaseActivity {
     private static final int FINISH_LAUNCHER=0;
     private  Handler UiHandler=new MyHandler();
 
-
     @Override
     protected int setLayoutId() {
         return R.layout.activity_launch;
@@ -43,13 +40,15 @@ public class LaunchActivity extends BaseActivity {
         //内部类，stati
     }
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         UiHandler.sendEmptyMessageDelayed(0, 2000);  //好假啊
 //        Toast.makeText(this,NDKinterface.getAESDecrypt(NDKinterface.getAESEncrypt("如果不是乱码就是成功了")),
 //                Toast.LENGTH_LONG).show();     //测试加密解密是否有问题
+
+//        CrashReport.testJavaCrash();
+
     }
 
     @Override
@@ -60,7 +59,7 @@ public class LaunchActivity extends BaseActivity {
 
 
     /**
-     * 接受消息，处理消息 ，此Handler会与当前主线程一块运行
+     * 接受消息，处理消息 ，此Handler会与当前主线程一块运行 ArchitectureActivity
      *
      */
     class MyHandler extends Handler {
@@ -83,7 +82,7 @@ public class LaunchActivity extends BaseActivity {
                     } else {
                         Intent i1 = new Intent();
                         i1.setClass(LaunchActivity.this, MainActivityBottomNavi.class);
-//                        i1.setClass(LaunchActivity.this, Oauth_MVP_Activity.class);
+//                        i1.setClass(LaunchActivity.this, MVPActivity.class);
                         startActivity(i1);
                         LaunchActivity.this.finish();
                     }

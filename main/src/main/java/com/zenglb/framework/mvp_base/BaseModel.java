@@ -16,5 +16,4 @@ public abstract class BaseModel implements IModel {
         ApiService = HttpCall.getApiService();
     }
 
-
 }

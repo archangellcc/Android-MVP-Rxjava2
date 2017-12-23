@@ -28,10 +28,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 /**
  * Http 请求配置和流程处理，部分Return 配置可以更加的简洁，为了试验，不简洁了
  *
- *
- * 1.问题
- * .retryOnConnectionFailure(false)以及设置了header("Connection", "Keep-Alive")
- * 是不是会导致http 请求 FAILED: java.io.IOException: unexpected end of stream on Connection
+ * 待完善
  *
  *
  * Created by Anylife.zlb@gmail.com on 2017/3/16.

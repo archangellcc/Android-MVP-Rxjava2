@@ -131,6 +131,7 @@ public class MVPActivity extends BaseMVPActivity<TaskPresenter, TasksRepository>
             public void onRefresh() {
                 page = 1;
                 mPresenter.getRemoteTasks("expired", page);
+                mPresenter.getRemoteTasks("expired", page+1);
             }
 
             @Override

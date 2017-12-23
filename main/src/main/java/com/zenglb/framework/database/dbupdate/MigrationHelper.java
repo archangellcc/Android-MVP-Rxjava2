@@ -43,6 +43,11 @@ public final class MigrationHelper {
         restoreData(db, daoClasses);
     }
 
+    /**
+     * 生成新的表
+     * @param db
+     * @param daoClasses
+     */
     private static void generateNewTablesIfNotExists(StandardDatabase db, Class<? extends AbstractDao<?, ?>>... daoClasses) {
         reflectMethod(db, "createTable", true, daoClasses);
     }
@@ -88,6 +93,12 @@ public final class MigrationHelper {
         }
     }
 
+    /**
+     *
+     *
+     * @param db
+     * @param daoClasses
+     */
     private static void restoreData(StandardDatabase db, Class<? extends AbstractDao<?, ?>>... daoClasses) {
         for (int i = 0; i < daoClasses.length; i++) {
             DaoConfig daoConfig = new DaoConfig(db, daoClasses[i]);

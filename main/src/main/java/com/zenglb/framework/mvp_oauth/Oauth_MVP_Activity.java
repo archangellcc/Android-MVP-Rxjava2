@@ -142,7 +142,7 @@ public class Oauth_MVP_Activity extends BaseMVPActivity<OauthPresenter, OauthMod
 
     @Override
     public void loginFail(String failMsg) {
-        Toasty.error(this.getApplicationContext(), "登录失败" + failMsg, Toast.LENGTH_SHORT).show();
+        Toasty.error(this.getApplicationContext(), failMsg, Toast.LENGTH_SHORT).show();
     }
 
 

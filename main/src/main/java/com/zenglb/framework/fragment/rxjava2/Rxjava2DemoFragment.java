@@ -228,13 +228,13 @@ public class Rxjava2DemoFragment extends BaseFragment {
      * 初始化Demo 的数据
      */
     private void initDemoData() {
-        data.add(new JokesResult("Rxjava+retrofit 基础操作", "Rxjava2+retrofit2 基础操作，返回的是HttpRespose<T>, T is List<Jokes>", "000"));
-
-        data.add(new JokesResult("FlatMap 的变换操作", "FlatMap将一个发送事件的上游Observable变换为多个发送事件的Observables，" +
-                "然后将它们发射的事件合并后放进一个单独的Observable里. ", "111"));
-
-        data.add(new JokesResult("Zip 的变换操作", "需要展示用户的一些信息, 而这些信息分别要从两个服务器接口中获取, " +
-                "而只有当两个都获取到了之后才能进行展示, 这个时候就可以用Zip了", "222"));
+//        data.add(new JokesResult("Rxjava+retrofit 基础操作", "Rxjava2+retrofit2 基础操作，返回的是HttpRespose<T>, T is List<Jokes>", "000"));
+//
+//        data.add(new JokesResult("FlatMap 的变换操作", "FlatMap将一个发送事件的上游Observable变换为多个发送事件的Observables，" +
+//                "然后将它们发射的事件合并后放进一个单独的Observable里. ", "111"));
+//
+//        data.add(new JokesResult("Zip 的变换操作", "需要展示用户的一些信息, 而这些信息分别要从两个服务器接口中获取, " +
+//                "而只有当两个都获取到了之后才能进行展示, 这个时候就可以用Zip了", "222"));
 
         areUSleepListAdapter.notifyDataSetChanged();
     }

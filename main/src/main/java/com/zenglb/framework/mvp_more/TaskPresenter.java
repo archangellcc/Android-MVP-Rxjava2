@@ -63,7 +63,9 @@ public class TaskPresenter extends BasePresenter<TasksRepository,MVPActivity> im
                     @Override
                     public void onFailure(int code, String message) {
                         super.onFailure(code, message);
-                        getIView().getTaskFailed(message);
+                        if(getIView()!=null){
+                            getIView().getTaskFailed(message);
+                        }
                     }
                 });
     }

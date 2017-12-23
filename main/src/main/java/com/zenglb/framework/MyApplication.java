@@ -8,6 +8,7 @@ import android.util.Log;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.squareup.leakcanary.LeakCanary;
+import com.tencent.bugly.crashreport.CrashReport;
 import com.zenglb.baselib.base.BaseApplication;
 import com.zenglb.baselib.sharedpreferences.SharedPreferencesDao;
 
@@ -54,7 +55,7 @@ public class MyApplication extends BaseApplication {
      * 比如web进程就不需要初始化推送，也不需要图片加载等等
      * <p>
      * 发新版 或 测试版也有不同的初始化
-     * 比如调试工具stetho 在debug 环境是要的，Release 是不需要的
+     * 比如调试工具stecho 在debug 环境是要的，Release 是不需要的
      */
     private void initApplication() {
         if (LeakCanary.isInAnalyzerProcess(this)) {
@@ -71,6 +72,8 @@ public class MyApplication extends BaseApplication {
                 SdkManager.initDebugOrRelease(this);
                 setDaoSession(SharedPreferencesDao.getInstance().getData("Account", "DefDb", String.class));
                 refWatcher = LeakCanary.install(this);  //只管主进程的,其他的进程自保吧
+
+                CrashReport.initCrashReport(getApplicationContext(), "28983b8590", false);
 
                 //创建默认的ImageLoader配置参数
                 ImageLoaderConfiguration configuration = ImageLoaderConfiguration.createDefault(this);

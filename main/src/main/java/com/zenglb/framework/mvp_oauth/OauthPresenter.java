@@ -30,15 +30,12 @@ public class OauthPresenter extends BasePresenter<OauthModel, Oauth_MVP_Activity
                     @Override
                     public void onSuccess(LoginResult loginResult) {
 
-
                         /**
                          * getIView() 可能出现是null 的情况，
                          */
                         if(isAttachView()){
                             getIView().loginSuccess(loginResult);
                         }
-
-
 
 //                        invokeMethod();  //把loginSuccess 放到里面去执行，不用判断isAttachView();
                     }

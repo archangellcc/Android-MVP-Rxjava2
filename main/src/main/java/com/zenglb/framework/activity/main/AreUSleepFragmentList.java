@@ -64,7 +64,6 @@ public class AreUSleepFragmentList extends BaseFragment {
         } else {
             Log.e(TAG, "onActivityCreated ");
         }
-
     }
 
 
